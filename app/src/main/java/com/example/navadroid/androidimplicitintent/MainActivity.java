@@ -12,6 +12,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View v) {
         Intent intent = new Intent();
+
         switch (v.getId()) {
             case R.id.btn_intent_1:
                 // TODO: Open media gallery
@@ -38,13 +40,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(intent);
                 break;
             case R.id.btn_intent_2:
-                // TODO: ???
+                // TODO: call
+                intent.setAction(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:" + 1669));
+                startActivity(intent);
                 break;
             case R.id.btn_intent_3:
-                // TODO: ???
+                // TODO: open browser
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("https://www.youtube.com"));
+                startActivity(intent);
                 break;
             case R.id.btn_intent_4:
-                // TODO: ???
+                // TODO: camera
+                /*intent.setAction(MediaStore.ACTION_IMAGE_CAPTURE);
+                intent.putExtra(MediaStore.EXTRA_OUTPUT,
+                        Uri.withAppendedPath("","lll"));
+                startActivity(intent);*/
                 break;
             case R.id.btn_intent_5:
                 // TODO: ???
